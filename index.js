@@ -1,8 +1,8 @@
 'use strict';
 const path = require('path');
-const {app, BrowserWindow, Menu} = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 /// const {autoUpdater} = require('electron-updater');
-const {is} = require('electron-util');
+const { is } = require('electron-util');
 const unhandled = require('electron-unhandled');
 const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
@@ -35,7 +35,13 @@ const createMainWindow = async () => {
 		title: app.name,
 		show: false,
 		width: 600,
-		height: 400
+		height: 400,
+		webPreferences: {
+			nodeIntegration: true,
+			allowRunningInsecureContent: false,
+			contextIsolation: false,  // false if you want to run 2e2 test with Spectron
+			enableRemoteModule: true // true if you want to run 2e2 test  with Spectron or use remote module in renderer context (ie. Angular)
+		},
 	});
 
 	win.on('ready-to-show', () => {

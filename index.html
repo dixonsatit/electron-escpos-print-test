@@ -1,18 +1,36 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Electron boilerplate</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<div class="container">
-			<header>
-				<h1>Electron boilerplate</h1>
-				<p></p>
-			</header>
-			<section class="main"></section>
-			<footer></footer>
-		</div>
-	</body>
+
+<head>
+	<meta charset="utf-8">
+	<title>Electron boilerplate</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>ESC/POS: Print Test </h1>
+			<br>
+			<label for="printTypeUsb"> USB</label><input checked type="radio" value="usb" name="printType"
+				id="printTypeUsb">
+			<label for="">Network</label><input change="" type="radio" value="network" name="printType"
+				id="printTypeNetwork">
+
+			<br><br>
+			<div style="display: none;" id="boxTxtIp">
+				<label for="txtIp">IP</label>
+				<input type="text" name="txtIp" id="txtIp">
+			</div>
+
+			<p><button id="txtPrint">Print Test</button></p>
+			<br>
+			<textarea rows="5" style="width: 300px;" id="txtLogs"></textarea>
+		</header>
+		<section class="main"></section>
+		<footer></footer>
+	</div>
+	<script src="renderer.js"></script>
+</body>
+
 </html>
